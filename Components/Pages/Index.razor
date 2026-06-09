@@ -1,0 +1,27 @@
+﻿@page "/index"
+@using System.Diagnostics
+
+<table>
+@for (int i = 0; i < 10; i++)
+{
+	<tr>
+	@for (int j = 0; j < 10; j++)
+	{
+				<td @onclick="() => Trace.WriteLine(i)">
+			<div style="width: 50px; height: 50px; border: 1px solid black;">
+				<img width="30" height="30" src="data:image/png;base64,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" />
+				<p></p>
+			</div>
+		</td>
+	}
+	</tr>
+}
+</table>
+
+@functions
+{
+	async Task Debug(int x, int y)
+	{
+		Trace.WriteLine($"Clicked on cell ({x}, {y})");
+	}
+}
